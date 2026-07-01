@@ -16,7 +16,7 @@
     body {
       font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, sans-serif;
       color: #1b2559;
-      background: #f7f8fc;
+      background: #EEF4FD;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       font-size: 16px;
@@ -47,6 +47,10 @@
       flex-wrap: wrap;
       gap: 16px;
     }
+
+    /* ── Brand title ── */
+    .brand-title { display: flex; align-items: center; gap: 16px; }
+    .brand-logo { width: 46px; height: 46px; flex-shrink: 0; }
 
     /* ── Model Selector (Broker / Agency) ── */
     .model-selector {
@@ -490,7 +494,10 @@
 <!-- ══════════════ CONFIGURATOR ══════════════ -->
 <div class="config-header">
   <div class="header-row">
-    <h1 id="page-title">Partnership &ndash; Broker Model Pricing</h1>
+    <div class="brand-title">
+      <img class="brand-logo" src="data:image/png;base64,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" alt="Nodalview logo">
+      <h1>Personalise your plan</h1>
+    </div>
     <div class="billing-selector" id="billing-selector">
       <button class="billing-opt active" data-billing="monthly" onclick="setBilling('monthly')">Monthly</button>
       <button class="billing-opt" data-billing="annual-monthly" onclick="setBilling('annual-monthly')">Annual <span class="billing-badge">1 MONTH FREE</span></button>
@@ -802,7 +809,6 @@ function renderProducts() {
    ════════════════════════════════════════ */
 function setModel(mode) {
   state.model = mode;
-  document.getElementById('page-title').innerHTML = MODELS[mode].title;
   document.querySelectorAll('.model-opt').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.model === mode);
   });
